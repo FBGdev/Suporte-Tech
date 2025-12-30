@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container d-flex justify-content-center align-items-center vh-100">
+  <div class="card shadow-lg p-4" style="width:100%;max-width:600px;border-radius:12px;">
+    <div class="text-center mb-3">
+      <h4 class="fw-bold"> Cadastro de Funcionário</h4>
+      <p class="text-muted">Criar acesso para técnico do suporte</p>
+    </div>
+
+    <form method="POST">
+      {% csrf_token %}
+
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label class="form-label">Usuário</label>
+          {{ form.username }}
+        </div>
+
+        <div class="col-md-6 mb-3">
+          <label class="form-label">E-mail</label>
+          {{ form.email }}
+        </div>
+
+        <div class="col-md-6 mb-3">
+          <label class="form-label">Nome</label>
+          {{ form.first_name }}
+        </div>
+
+        <div class="col-md-6 mb-3">
+          <label class="form-label">Sobrenome</label>
+          {{ form.last_name }}
+        </div>
+
+        <div class="col-md-6 mb-3">
+          <label class="form-label">Cargo</label>
+          {{ form.cargo }}
+        </div>
+
+        <div class="col-md-6 mb-3">
+          <label class="form-label">Telefone</label>
+          {{ form.telefone }}
+        </div>
+
+        <div class="col-md-6 mb-3">
+          <label class="form-label">Senha</label>
+          {{ form.senha }}
+        </div>
+
+        <div class="col-md-6 mb-3">
+          <label class="form-label">Confirmar senha</label>
+          {{ form.confirmar_senha }}
+        </div>
+      </div>
+
+      {% if form.errors %}
+      <div class="alert alert-danger">
+        {{ form.errors }}
+      </div>
+      {% endif %}
+
+      <button class="btn btn-success w-100">Criar conta</button>
+    </form>
+
+    <div class="text-center mt-3">
+      <small class="text-muted">O usuário será criado como funcionário do suporte técnico</small>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

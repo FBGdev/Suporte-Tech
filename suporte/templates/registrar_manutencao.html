@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="card mx-auto shadow" style="max-width: 700px;">
+  <div class="card-header bg-warning">
+    <h5 class="mb-0"> Registrar Serviço - {{aparelho.nome}}</h5>
+  </div>
+  <div class="card-body">
+    <form method="POST">{% csrf_token %}
+        {{form.as_p}}
+        <button class="btn btn-primary w-100"> Registrar Serviço</button>
+    </form>
+  </div>
+</div>
+
+{% endblock %}
