@@ -21,13 +21,14 @@ from core import views
 from django.contrib.auth import views as auth_views
 
 urlpatterns = [
-    path('login/', auth_views.LoginView.as_view(template_name='login.html'), name='login'),
+    path('', auth_views.LoginView.as_view(template_name='login.html'), name='login'),
     path('admin/', admin.site.urls),
-    path('', views.home, name='login'),
+    path('home/', views.home, name='login'),
     path('aparelho/novo/', views.cadastrar_aparelho, name='cadastrar_aparelho'),
     path('aparelho/<int:aparelho_id>/manutencao/', views.registrar_manutencao, name='registrar_manutencao'),
 	path('cadastro/', views.cadastrar_usuario, name='cadastro'),
 
 	
 ]
+
 
