@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 """
 
 from pathlib import Path
-
+import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -133,6 +133,15 @@ USE_TZ = True
 STATIC_URL = '/static/'
 LOGIN_REDIRECT_URL = '/login/'
 LOGOUT_REDIRECT_URL = '/login/'
+
+#criacao de superusuario
+
+
+
+DJANGO_SUPERUSER_USERNAME = os.getenv("admin")
+DJANGO_SUPERUSER_EMAIL = os.getenv("fabianodev@yahoo.com")
+DJANGO_SUPERUSER_PASSWORD = os.getenv("admin@senha")
+
 
 
 
